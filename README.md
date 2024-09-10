@@ -1,6 +1,6 @@
 # Big Calculator Project
 
-Welcome to the Big Calculator Project! This project is a collaborative effort by our team to create a basic yet functional calculator application using Python. 
+Welcome to the Big Calculator Project! This project is a collaborative effort by our team to create a basic yet functional calculator application using only Python. 
 
 ## Project Overview
 
