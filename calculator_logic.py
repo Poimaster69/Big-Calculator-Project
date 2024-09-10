@@ -17,10 +17,10 @@ def buttonClick(display_text, value):
     elif str_value == '√':
         if current_text == "" or current_text[-1] in "+-*/.":
             pos = display_text.index(INSERT)
-            display_text.insert(pos, '√(')
+            display_text.insert(pos, '√()')
         else:
             pos = display_text.index(INSERT)
-            display_text.insert(pos, '*√(')
+            display_text.insert(pos, '*√()')
 
 def buttonClear(display_text):
     display_text.delete(0, END)
@@ -37,7 +37,7 @@ def buttonEqual(display_text):
 
     try:
         # Convert '√' to 'math.sqrt(' and '²' to '**2'
-        expression = expression.replace('√(', 'math.sqrt(')
+        expression = expression.replace('√()', 'math.sqrt(')
         expression = expression.replace('²', '**2')
 
         # Handle unmatched parentheses
