@@ -36,22 +36,14 @@ def create_calculator_frame(parent, display_text, page_name):
     button_width = 80
     button_height = 80
 
-    if page_name == "basic":
-        buttons = [
+    page_name == "basic"
+    buttons = [
             ("%", 1, 0), ("√", 1, 1), ("²", 1, 2), ("C", 1, 3), ("⌫", 1, 4),
             ("7", 2, 0), ("8", 2, 1), ("9", 2, 2), ("+", 2, 3), ("(", 2, 4),
             ("4", 3, 0), ("5", 3, 1), ("6", 3, 2), ("-", 3, 3), (")", 3, 4),
             ("1", 4, 0), ("2", 4, 1), ("3", 4, 2), ("*", 4, 3),
             ("0", 5, 0), (".", 5, 1), ("=", 5, 2), ("/", 5, 3),
-        ]
-    elif page_name == "advanced":
-        buttons = [
-            ("sin", 1, 0), ("cos", 1, 1), ("tan", 1, 2), ("C", 1, 3), ("⌫", 1, 4),
-            ("7", 2, 0), ("8", 2, 1), ("9", 2, 2), ("+", 2, 3), ("(", 2, 4),
-            ("4", 3, 0), ("5", 3, 1), ("6", 3, 2), ("-", 3, 3), (")", 3, 4),
-            ("1", 4, 0), ("2", 4, 1), ("3", 4, 2), ("*", 4, 3),
-            ("0", 5, 0), (".", 5, 1), ("=", 5, 2), ("/", 5, 3),
-        ]
+    ]
 
     for (text, row, col) in buttons:
         if text == "=":
@@ -70,11 +62,9 @@ def switch_frame(frame):
 
 def main():
     global basic_frame
-    global advanced_frame
-    global current_mode
 
     main_window = Tk()
-    main_window.title("Rounded Edge Calculator")
+    main_window.title("Boom Calculator")
     main_window.geometry("360x600")
     main_window.configure(bg="black")
 
@@ -89,16 +79,8 @@ def main():
                          justify=RIGHT, insertbackground='white', highlightthickness=0)
     display_text.grid(row=0, column=0, columnspan=2, padx=10, pady=20, sticky='nsew')
 
-    # Create a StringVar to manage the current mode
-    current_mode = StringVar()
-    current_mode.set("basic")  # Start with the basic mode
-
     # Create frames for each page
     basic_frame = create_calculator_frame(main_window, display_text, "basic")
-    advanced_frame = create_calculator_frame(main_window, display_text, "advanced")
-
-    # Start with the basic frame
-    switch_frame(basic_frame)
 
     main_window.mainloop()
 
